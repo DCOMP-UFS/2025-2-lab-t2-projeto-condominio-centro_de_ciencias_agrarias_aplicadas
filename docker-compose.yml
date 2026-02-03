@@ -1,0 +1,75 @@
+version: "3.8"
+
+services:
+  # Site do Laboratório 1 - Camilo Feitosa
+  laboratorio1:
+    build:
+      context: ./laboratorios/laboratorio1
+      dockerfile: Dockerfile
+    container_name: lab1-site
+    ports:
+      - "8081:80"
+    networks:
+      - centro-network
+    restart: unless-stopped
+    volumes:
+      - ./dados-centro:/dados-centro:ro # Acesso compartilhado aos dados do centro
+    environment:
+      - LAB_NAME=Laboratório 1
+      - LAB_PORT=8081
+
+  # Site do Laboratório 2 - Pedro
+  laboratorio2:
+    build:
+      context: ./laboratorios/laboratorio2
+      dockerfile: Dockerfile
+    container_name: lab2-site
+    ports:
+      - "8082:80"
+    networks:
+      - centro-network
+    restart: unless-stopped
+    volumes:
+      - ./dados-centro:/dados-centro:ro
+    environment:
+      - LAB_NAME=Laboratório 2
+      - LAB_PORT=8082
+
+  # Site do Laboratório 3 - Davi
+  laboratorio3:
+    build:
+      context: ./laboratorios/laboratorio3
+      dockerfile: Dockerfile
+    container_name: lab3-site
+    ports:
+      - "8083:80"
+    networks:
+      - centro-network
+    restart: unless-stopped
+    volumes:
+      - ./dados-centro:/dados-centro:ro
+    environment:
+      - LAB_NAME=Laboratório 3
+      - LAB_PORT=8083
+
+  # Proxy reverso Nginx (opcional - para centralizar acesso)
+  nginx-proxy:
+    image: nginx:alpine
+    container_name: centro-proxy
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./dados-centro:/usr/share/nginx/html/dados:ro
+    networks:
+      - centro-network
+    restart: unless-stopped
+    depends_on:
+      - laboratorio1
+      - laboratorio2
+      - laboratorio3
+
+networks:
+  centro-network:
+    driver: bridge

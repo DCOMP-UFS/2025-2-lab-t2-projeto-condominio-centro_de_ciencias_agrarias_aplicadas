@@ -1,0 +1,27 @@
+# Docker Compose
+.env
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Node modules (se algum lab usar Node.js)
+**/node_modules/
+
+# Python (se algum lab usar Python)
+**/__pycache__/
+**/*.pyc
+**/.venv/
+**/venv/
+
+# Dados temporários
+dados-centro/temp/
