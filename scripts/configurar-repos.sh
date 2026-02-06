@@ -20,7 +20,7 @@ cd "$(dirname "$0")/.." || exit
 echo -e "${YELLOW}Este script irá configurar os repositórios dos laboratórios como submódulos Git.${NC}"
 echo ""
 echo "URLs dos repositórios conhecidos:"
-echo "  Lab 1: https://github.com/DCOMP-UFS/2025-2-lab-t2-projeto-lab-site-CamiloFeitosa.git"
+echo "  Lab 1: git@github.com:DCOMP-UFS/2025-2-lab-t2-projeto-lab-site-CamiloFeitosa.git"
 echo "  Lab Teste 2: https://github.com/Felipespider/World-of-SEAL-HTML-CSS-.git"
 echo ""
 echo ""
@@ -30,8 +30,8 @@ echo ""
 # Laboratório 1
 echo -e "${BLUE}Laboratório 1 (Camilo Feitosa):${NC}"
 read -p "URL do repositório [pressione Enter para usar padrão]: " LAB1_URL
-LAB1_URL=${LAB1_URL:-"github.com/DCOMP-UFS/2025-2-lab-t2-projeto-lab-site-CamiloFeitosa.git"}
-
+LAB1_URL=${LAB1_URL:-"git@github.com:DCOMP-UFS/2025-2-lab-t2-projeto-lab-site-CamiloFeitosa.git"}
+    
 if [ ! -z "$LAB1_URL" ]; then
     echo -e "${YELLOW}Removendo pasta existente...${NC}"
     git submodule deinit -f laboratorios/laboratorio1 2>/dev/null
