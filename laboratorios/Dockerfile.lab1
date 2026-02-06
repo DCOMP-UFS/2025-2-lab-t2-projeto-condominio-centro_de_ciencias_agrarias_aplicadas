@@ -1,0 +1,12 @@
+# Dockerfile simplificado para Laboratório 1
+# Serve apenas os arquivos estáticos sem nginx.conf customizado
+FROM nginx:alpine
+
+# Copiar apenas os arquivos da pasta src
+COPY laboratorio1/src/ /usr/share/nginx/html/
+
+# Expor a porta 80
+EXPOSE 80
+
+# Comando para iniciar o Nginx com configuração padrão
+CMD ["nginx", "-g", "daemon off;"]

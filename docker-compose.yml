@@ -4,11 +4,9 @@ services:
   # Site do Laboratório 1 - Camilo Feitosa
   laboratorio1:
     build:
-      context: ./laboratorios/laboratorio1
-      dockerfile: Dockerfile
+      context: ./laboratorios
+      dockerfile: Dockerfile.lab1
     container_name: lab1-site
-    ports:
-      - "8081:80"
     networks:
       - centro-network
     restart: unless-stopped
@@ -16,16 +14,13 @@ services:
       - ./dados-centro:/dados-centro:ro # Acesso compartilhado aos dados do centro
     environment:
       - LAB_NAME=Laboratório 1
-      - LAB_PORT=8081
 
-  # Site do Laboratório 2 - Pedro
+  # Site do Laboratório 2 - Felipe
   laboratorio2:
     build:
-      context: ./laboratorios/laboratorio2
-      dockerfile: Dockerfile
-    container_name: lab2-siteTesteFelipe
-    ports:
-      - "8082:80"
+      context: ./laboratorios
+      dockerfile: Dockerfile.lab2
+    container_name: lab2-site
     networks:
       - centro-network
     restart: unless-stopped
@@ -33,7 +28,6 @@ services:
       - ./dados-centro:/dados-centro:ro
     environment:
       - LAB_NAME=Laboratório 2
-      - LAB_PORT=8082
 
   # Proxy reverso Nginx (opcional - para centralizar acesso)
   nginx-proxy:

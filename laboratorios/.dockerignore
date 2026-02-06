@@ -1,0 +1,16 @@
+# Ignorar arquivos Git dos submódulos
+**/.git
+**/.gitignore
+
+# Ignorar Dockerfiles e nginx.conf dos submódulos (usamos os do projeto principal)
+laboratorio1/Dockerfile
+laboratorio1/nginx.conf
+laboratorio2/Dockerfile
+laboratorio2/nginx.conf
+
+# Arquivos de documentação
+**/*.md
+**/README*
+**/INFRAESTRUTURA.md
+**/projetos.txt
+**/*.xml
