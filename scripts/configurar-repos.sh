@@ -30,7 +30,7 @@ echo ""
 # Laboratório 1
 echo -e "${BLUE}Laboratório 1 (Camilo Feitosa):${NC}"
 read -p "URL do repositório [pressione Enter para usar padrão]: " LAB1_URL
-LAB1_URL=${LAB1_URL:-"https://github.com/DCOMP-UFS/2025-2-lab-t2-projeto-lab-site-CamiloFeitosa.git"}
+LAB1_URL=${LAB1_URL:-"github.com/DCOMP-UFS/2025-2-lab-t2-projeto-lab-site-CamiloFeitosa.git"}
 
 if [ ! -z "$LAB1_URL" ]; then
     echo -e "${YELLOW}Removendo pasta existente...${NC}"
