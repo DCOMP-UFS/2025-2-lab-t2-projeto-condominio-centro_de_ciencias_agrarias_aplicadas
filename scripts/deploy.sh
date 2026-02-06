@@ -15,6 +15,17 @@ YELLOW='\033[1;33m'
 RED='\033[0;31m'
 NC='\033[0m' # No Color
 
+# Muda para o diretório raiz do projeto
+cd "$(dirname "$0")/.." || exit
+
+# Inicializa e atualiza os submódulos Git
+echo -e "${YELLOW}📥 Inicializando submódulos Git...${NC}"
+git submodule init
+echo -e "${YELLOW}🔄 Atualizando submódulos Git...${NC}"
+git submodule update --remote --merge
+
+echo ""
+
 # Verifica se o Docker está rodando
 if ! docker info > /dev/null 2>&1; then
     echo -e "${RED}❌ Docker não está rodando. Por favor, inicie o Docker.${NC}"

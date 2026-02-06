@@ -1,323 +1,86 @@
-# Centro de Ciências Agrárias Aplicadas
+# Condomínio de Laboratórios - Centro de Ciências Agrárias Aplicadas
 
-## Sistema de Deploy Unificado dos Laboratórios
+## O que é este projeto?
 
-Este repositório centraliza o deploy e gerenciamento dos sites dos laboratórios do Centro de Ciências Agrárias Aplicadas usando Docker, Docker Compose e Git Submodules.
+Este projeto propõe a criação de um **condomínio de laboratórios multiusuários** no Centro de Ciências Agrárias Aplicadas (CCAA), com infraestrutura compartilhada entre cinco laboratórios.
 
-**🎯 Objetivo:** Este repositório faz automaticamente `git pull` dos repositórios individuais dos laboratórios e sobe os sites de cada um.
+## Definição Formal da Proposta
 
-## 📋 Status dos Repositórios
+A presente proposta é submetida no âmbito do Centro de Ciências Agrárias Aplicadas (CCAA) e tem como objetivo a implantação, ampliação e modernização de infraestrutura científica e tecnológica de uso compartilhado, destinada à constituição e fortalecimento de um condomínio de laboratórios multiusuários, abrangendo os cinco laboratórios que compõem o referido centro.
 
-| Lab | Responsável    | Status           | URL                                                                                       |
-| --- | -------------- | ---------------- | ----------------------------------------------------------------------------------------- |
-| 1   | Camilo Feitosa | ✅ Configurado   | [Ver repo](https://github.com/DCOMP-UFS/2025-2-lab-t2-projeto-lab-site-CamiloFeitosa.git) |
-| 2   | Pedro          | ⚠️ URL incorreta | Pendente                                                                                  |
-| 3   | Davi           | ⚠️ URL incorreta | Pendente                                                                                  |
-| 4   | -              | 🔜 A adicionar   | -                                                                                         |
+Embora o Centro de Ciências Agrárias Aplicadas (CCAA) seja constituído por cinco laboratórios distintos, a presente submissão contempla, nesta etapa inicial, a descrição técnica detalhada e a organização documental exclusivamente do Laboratório Grupo Acqua, o qual será adotado como laboratório de referência para a estruturação da proposta. Tal delimitação decorre do fato de que apenas um membro participou ativamente da elaboração técnica, organizacional e documental desta submissão, assumindo integralmente as responsabilidades relacionadas ao planejamento, à concepção da infraestrutura e à formalização da proposta junto ao presente edital.
 
-> **Nota:** Os Labs 2 e 3 estão com placeholders pois os repositórios não foram encontrados. Veja [SETUP_REPOS.md](SETUP_REPOS.md) para instruções de correção.
+Ressalta-se, contudo, que a infraestrutura pleiteada não se restringe ao Laboratório Grupo Acqua, mas foi planejada para atender de forma integrada e compartilhada os cinco laboratórios do CCAA, especialmente no que se refere a componentes centrais como servidores, sistemas de armazenamento, equipamentos de rede, serviços computacionais e demais recursos estruturantes, os quais serão utilizados de maneira multiusuária por todo o centro.
 
-## 📁 Estrutura do Projeto
+Dessa forma, o Laboratório Grupo Acqua atua como núcleo inicial de implantação e validação da infraestrutura, enquanto o escopo funcional, o orçamento e o impacto institucional da proposta abrangem o conjunto dos cinco laboratórios, assegurando o atendimento aos princípios de uso compartilhado, otimização de recursos, ampliação do acesso à infraestrutura de pesquisa e fortalecimento institucional, conforme estabelecido no Edital.
 
-```
-.
-├── docker-compose.yml          # Orquestração dos 4 sites
-├── nginx.conf                  # Proxy reverso para acesso unificado
-├── laboratorios/               # Sites dos laboratórios
-│   ├── laboratorio1/          # Repositório do Lab 1
-│   │   ├── Dockerfile
-│   │   └── index.html
-│   ├── laboratorio2/          # Repositório do Lab 2
-│   │   ├── Dockerfile
-│   │   └── index.html
-│   ├── laboratorio3/          # Repositório do Lab 3
-│   │   ├── Dockerfile
-│   │   └── index.html
-│   └── laboratorio4/          # Repositório do Lab 4
-│       ├── Dockerfile
-│       └── index.html
-├── dados-centro/              # Dados compartilhados entre labs
-└── scripts/                   # Scripts de automação
-    ├── deploy.sh              # Deploy completo
-    ├── atualizar.sh           # Atualizar repositórios
-    ├── parar.sh               # Parar containers
-    └── configurar-repos.sh    # Configurar submódulos Git
-```
+## Caracterização do Centro e dos Laboratórios Atendidos
 
-## 🚀 Como Usar
+O Centro de Ciências Agrárias Aplicadas (CCAA) é constituído por cinco laboratórios, os quais atuam de forma complementar no desenvolvimento de atividades de ensino, pesquisa e extensão, atendendo diferentes áreas do conhecimento vinculadas às ciências agrárias aplicadas, com forte interface tecnológica e científica.
 
-### Deploy Inicial
+Os laboratórios do CCAA dão suporte a atividades acadêmicas e de pesquisa relacionadas, entre outras, às áreas de infraestrutura computacional, redes de computadores, processamento de dados, automação, análise de sistemas aplicados ao setor agrário e suporte tecnológico a projetos interdisciplinares. Essas atividades atendem cursos de graduação e iniciativas de pesquisa desenvolvidas no âmbito do centro, além de ações de apoio técnico a projetos institucionais.
 
-1. **Clone este repositório:**
+Embora a presente proposta apresente a descrição técnica detalhada de apenas um laboratório, os recursos e a infraestrutura solicitados foram dimensionados para atender conjuntamente os cinco laboratórios que compõem o CCAA, considerando o uso compartilhado de serviços centrais, tais como servidores, sistemas de armazenamento, equipamentos de rede e demais recursos estruturantes.
 
-   ```bash
-   git clone <url-deste-repo>
-   cd 2025-2-lab-t2-projeto-condominio-centro_de_ciencias_agrarias_aplicadas
-   ```
+Estima-se que a infraestrutura proposta beneficie diretamente um conjunto significativo de usuários potenciais, incluindo discentes de graduação, docentes, pesquisadores e colaboradores técnicos vinculados aos cinco laboratórios do centro, ampliando a capacidade de atendimento, a disponibilidade de recursos computacionais e a eficiência no uso da infraestrutura científica e tecnológica.
 
-2. **Inicialize os submódulos Git:**
+Dessa forma, a abrangência da proposta reflete a real demanda institucional do Centro de Ciências Agrárias Aplicadas, justificando o dimensionamento orçamentário apresentado, ao mesmo tempo em que preserva o caráter de proposta individual, conforme estabelecido no edital.
 
-   ```bash
-   git submodule init
-   git submodule update
-   ```
+## Diagnóstico Técnico do Laboratório de Referência (Grupo Acqua)
 
-3. **Execute o deploy:**
+O Laboratório Grupo Acqua foi adotado como laboratório de referência para a presente proposta por concentrar a infraestrutura computacional e de rede que atualmente dá suporte às atividades técnicas e científicas do Centro de Ciências Agrárias Aplicadas (CCAA). A topologia existente do laboratório encontra-se formalmente documentada por meio de um mapa topológico em formato XML, o qual representa a organização lógica e física dos elementos de rede, servidores e serviços atualmente disponíveis.
 
-   ```bash
-   ./scripts/deploy.sh
-   ```
+## Justificativa do Compartilhamento da Infraestrutura entre os Cinco Laboratórios do CCAA
 
-   Ou manualmente:
+A infraestrutura proposta foi concebida desde sua origem para operar de forma centralizada e compartilhada, atendendo aos cinco laboratórios que integram o Centro de Ciências Agrárias Aplicadas (CCAA). Embora o Laboratório Grupo Acqua seja utilizado como base técnica para detalhamento e implantação inicial, os recursos solicitados destinam-se ao atendimento coletivo das demandas do centro.
 
-   ```bash
-   docker-compose up -d --build
-   ```
+Serão compartilhados entre os laboratórios serviços essenciais, tais como servidores computacionais, sistemas de armazenamento de dados, serviços de autenticação, infraestrutura de rede, políticas de segurança e demais recursos de suporte, possibilitando que diferentes atividades acadêmicas e de pesquisa utilizem a mesma base tecnológica de forma organizada e eficiente.
 
-   (Camilo):\*\* http://localhost:8081 ou http://localhost/lab1
+Os demais quatro laboratórios do CCAA se beneficiarão diretamente do acesso a esses serviços centralizados, eliminando a necessidade de infraestruturas isoladas, reduzindo custos de manutenção, aumentando a disponibilidade dos recursos e promovendo a padronização dos ambientes computacionais. Esse modelo favorece a colaboração entre equipes, a integração de projetos e a ampliação do uso da infraestrutura científica.
 
-- **Laboratório 2 (Pedro):** http://localhost:8082 ou http://localhost/lab2
-- **Laboratório 3 (Davi):** http://localhost:8083 ou http://localhost/lab3
-- **Dados do Centro:** http://localhost/dados
+A adoção de uma infraestrutura centralizada e compartilhada mostra-se tecnicamente adequada e institucionalmente estratégica, pois otimiza recursos, amplia o alcance da proposta e fortalece o caráter multiusuário exigido pelo edital, sem prejuízo às especificidades de cada laboratório atendido.
 
-## 🔧 Como Funciona o Sistema
+## Plano de Uso Multiusuário da Infraestrutura
 
-````� Como Funciona o Sistema
+O uso da infraestrutura financiada será regido por um Plano de Uso Multiusuário, garantindo acesso equitativo, organizado e transparente aos recursos disponibilizados para os cinco laboratórios do CCAA. O acesso aos serviços será concedido a usuários vinculados às atividades de ensino, pesquisa e extensão, mediante credenciamento prévio e observância das normas institucionais.
 
-### Arquitetura
+O agendamento do uso de recursos computacionais e serviços compartilhados será realizado de forma centralizada, priorizando atividades acadêmicas regulares, projetos de pesquisa em andamento e demandas institucionais estratégicas do centro. Sempre que necessário, serão estabelecidos critérios de prioridade, de modo a assegurar a continuidade das atividades essenciais.
 
-### Adicionar Lab 4 (quando disponível)
+As responsabilidades relacionadas à operação, manutenção e administração da infraestrutura serão assumidas pelo proponente, garantindo o funcionamento adequado dos equipamentos, a segurança das informações, a atualização dos sistemas e o correto registro de uso. Serão mantidos registros de acesso e indicadores básicos de utilização, permitindo o acompanhamento do uso multiusuário da infraestrutura.
 
-```bash
-# Adicionar repositório
-git submodule add <URL_LAB4> laboratorios/laboratorio4
+Estima-se que a infraestrutura proposta atenda um conjunto ampliado de usuários, incluindo discentes, docentes, pesquisadores e colaboradores técnicos dos cinco laboratórios do CCAA, ampliando a capacidade operacional do centro e fortalecendo o uso compartilhado da infraestrutura científica e tecnológica.
 
-# Depois edite docker-compose.yml e nginx.conf para incluir o Lab 4
+## Cronograma de Implantação da Infraestrutura
 
-# Fazer deploy
-./scripts/deploy.sh
-````
+O cronograma de implantação da infraestrutura proposta foi estruturado de forma a garantir a execução ordenada, eficiente e tecnicamente viável das etapas de aquisição, instalação, entrada em operação e disponibilização multiusuária dos recursos financiados, assegurando o pleno atendimento aos cinco laboratórios que compõem o Centro de Ciências Agrárias Aplicadas (CCAA).
 
-Veja instruções completas em [SETUP_REPOS.md](SETUP_REPOS.md)
+A etapa de aquisição compreenderá os procedimentos administrativos e técnicos necessários à compra dos equipamentos e materiais previstos, incluindo a formalização dos processos de aquisição, conferência das especificações técnicas e recebimento dos itens, em conformidade com as normas institucionais vigentes.
 
-## 🛠️ Comandos Disponíveis
+Concluída a aquisição, será realizada a instalação da infraestrutura, envolvendo a montagem física dos equipamentos, a integração à rede existente, a configuração inicial dos sistemas, bem como os ajustes necessários para garantir compatibilidade, segurança e estabilidade do ambiente.
 
-### Scripts de Gerenciamento
+Na sequência, ocorrerá a entrada em operação, etapa na qual serão realizados testes de funcionamento, validação dos serviços implantados, ajustes de desempenho e verificação da disponibilidade dos recursos, assegurando que a infraestrutura esteja apta a atender às demandas previstas.
 
-| Comando                         | Descrição                                       |
-| ------------------------------- | ----------------------------------------------- |
-| `./scripts/deploy.sh`           | 🚀 Deploy inicial de todos os sites             |
-| `./scripts/atualizar.sh`        | 🔄 **Atualiza repos (git pull) e faz redeploy** |
-| `./scripts/parar.sh`            | 🛑 Para todos os containers                     |
-| `./scripts/configurar-repos.sh` | ⚙️ Configura URLs dos repositórios              |
+Por fim, a disponibilização multiusuária marcará o início do uso regular da infraestrutura pelos cinco laboratórios do CCAA, conforme o Plano de Uso Multiusuário estabelecido, garantindo acesso organizado, compartilhado e transparente aos recursos implementados.
 
-### Comandos Docker
+## Declaração de Responsabilidade
 
-```bash
-# Ver logs de todos os labs
-docker-compose logs -f
+Eu, **Antonio Camilo Santos Feitosa**, declaro para os devidos fins que assumo integralmente as responsabilidades e atribuições referentes à presente proposta submetida no âmbito do Centro de Ciências Agrárias Aplicadas (CCAA), exercendo cumulativamente as funções de Coordenador da Proposta, Assistente de Atas de Registro de Compras e Contador/Tesoureiro, conforme previsto no Edital.
 
-# Ver logs de um lab específico
-docker-compose logs -f laboratorio1
+A acumulação das referidas funções ocorre de forma consciente e responsável, exclusivamente por ser o único membro participando ativamente do desenvolvimento do projeto para este centro. Não há impedimento normativo para tal prática, sendo assegurado o cumprimento adequado das obrigações técnicas, administrativas e financeiras inerentes à execução da proposta, bem como a observância dos princípios de transparência, rastreabilidade e prestação de contas exigidos.
 
-# Ver status dos containers
-docker-compose ps
+## Laboratórios
 
-# Reconstruir um lab específico
-docker-compose up -d --build laboratorio1
+- Laboratório 1: Grupo Acqua (Laboratório de Referência)
+- Laboratório 2
+- Laboratório 3
+- Laboratório 4
+- Laboratório 5
 
-# Parar tudo
-docker-compose down
+## Documentação
 
-# Parar e limpar volumes
-docker-compose down -v
-# Remover pastas de exemplo
-rm -rf laboratorios/laboratorio1
-rm -rf laboratorios/laboratorio2
-rm -rf laboratorios/laboratorio3
-rm -rf laboratorios/laboratorio4
+- [Guia Rápido de Deploy](GUIA_RAPIDO.md)
+- [Configuração dos repositorios individuais com projeto principal](SETUP_REPOS.md)
 
-# Adicionar repositórios como submódulos
-git submodule add <URL-do-repo-lab1> laboratorios/laboratorio1
-git submodule add <URL-do-repo-lab2> laboratorios/laboratorio2
-git submodule add <URL-do-repo-lab3> laboratorios/laboratorio3
-git submodule add <URL-do-repo-lab4> laboratorios/laboratorio4
+---
 
-# Inicializar e atualizar
-git submodule init
-git submodule update
-```
-
-### Opção 2: Clonar Manualmente
-
-```bash
-rm -rf laboratorios/laboratorio1
-git clone <URL-do-repo-lab1> laboratorios/laboratorio1
-
-rm -rf laboratorios/laboratorio2
-git clone <URL-do-repo-lab2> laboratorios/laboratorio2
-
-# ... e assim por diante
-```
-
-### Atualizar Repositórios
-
-```bash
-./scripts/atualizar.sh
-```
-
-Ou manualmente:
-
-```bash
-git submodule update --remote --merge
-docker-compose up -d --build
-```
-
-## 🛠️ Comandos Úteis
-
-### Ver logs dos containers:
-
-```bash
-docker-compose logs -f
-```
-
-### Ver logs de um laboratório específico:
-
-```bash
-docker-compose logs -f laboratorio1
-```
-
-### Parar todos os containers:
-
-```bash
-./scripts/parar.sh
-# ou
-docker-compose down
-```
-
-### Reconstruir um laboratório específico:
-
-```bash
-docker-compose up -d --build laboratorio1
-```
-
-### Ver status dos containers:
-
-```bash
-docker-compose ps
-```
-
-## 📝 Requisitos dos Repositórios dos Laboratórios
-
-Cada repositório de laboratório deve conter:
-
-1. **Dockerfile** - Para construir a imagem do site
-2. **Arquivos do site** - HTML, CSS, JS, etc.
-
-### Exemplo de Dockerfile (para site estático):
-
-```dockerfile
-FROM nginx:alpine
-COPY . /usr/share/nginx/html/
-EXPOSE 80
-CMD ["nginx", "-g", "daemon off;"]
-```
-
-### Exemplo para site Node.js:
-
-```dockerfile
-FROM node:18-alpine
-WORKDIR /app
-COPY package*.json ./
-RUN npm install
-COPY . .
-EXPOSE 3000
-CMD ["npm", "start"]
-```
-
-## 📊 Dados Compartilhados
-
-A pasta `dados-centro/` é compartilhada com todos os laboratórios através de volumes Docker. Coloque aqui:
-
-- Publicações científicas
-- Datasets de pesquisas
-- Relatórios anuais
-- Documentos administrativos
-
-**Acesso:** http://localhost/dados
-
-## 🔧 Configuração Avançada
-
-### Alterar Portas
-
-Edite o arquivo `docker-compose.yml` e modifique as portas:
-
-```yaml
-laboratorio1:
-  ports:
-    - "8081:80" # Altere 8081 para a porta desejada
-```
-
-### Adicionar Variáveis de Ambiente
-
-No `docker-compose.yml`, adicione em `environment`:
-
-```yaml
-laboratorio1:
-  environment:
-    - DATABASE_URL=postgres://...
-    - API_KEY=seu-api-key
-```
-
-### Configurar HTTPS
-
-Para produção, configure certificados SSL no `nginx.conf`:
-
-```nginx
-server {
-    listen 443 ssl;
-    ssl_certificate /etc/nginx/ssl/cert.pem;
-    ssl_certificate_key /etc/nginx/ssl/key.pem;
-    # ... resto da configuração
-}
-```
-
-## 🐛 Solução de Problemas
-
-### Porta já em uso:
-
-```bash
-# Verificar o que está usando a porta
-lsof -i :80
-# Ou altere a porta no docker-compose.yml
-```
-
-### Container não inicia:
-
-```bash
-# Ver logs detalhados
-docker-compose logs laboratorio1
-# Reconstruir do zero
-docker-compose down
-docker-compose up -d --build
-```
-
-### Submódulos não atualizam:
-
-```bash
-git submodule update --init --recursive --remote
-```
-
-## 📚 Documentação Adicional
-
-- [Docker Compose](https://docs.docker.com/compose/)
-- [Git Submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules)
-- [Nginx](https://nginx.org/en/docs/)
-
-## 👥 Equipe
-
-Centro de Ciências Agrárias Aplicadas - 2026
-
-## 📄 Licença
-
-Este projeto é de uso interno do Centro de Ciências Agrárias Aplicadas.
+_Última atualização: Fevereiro de 2026_
