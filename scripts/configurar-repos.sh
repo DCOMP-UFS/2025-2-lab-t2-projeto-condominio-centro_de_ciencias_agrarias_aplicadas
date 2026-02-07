@@ -20,17 +20,17 @@ cd "$(dirname "$0")/.." || exit
 echo -e "${YELLOW}Este script irá configurar os repositórios dos laboratórios como submódulos Git.${NC}"
 echo ""
 echo "URLs dos repositórios conhecidos:"
-echo "  Lab 1: git@github.com:DCOMP-UFS/2025-2-lab-t2-projeto-lab-site-CamiloFeitosa.git"
-echo "  Lab 2: git@github.com:DCOMP-UFS/2025-2-lab-t2-projeto-lab-site-DaviZzZS2.git"
-echo "  Lab 3: git@github.com:DCOMP-UFS/2025-2-lab-t2-projeto-lab-site-Pedro-rdn.git"
-echo "  Lab 4: git@github.com:DCOMP-UFS/2025-2-lab-t2-projeto-lab-site-WendellYan-dev.git"
+echo "  Lab 1: git@github-camilo:DCOMP-UFS/2025-2-lab-t2-projeto-lab-site-CamiloFeitosa.git"
+echo "  Lab 2: git@github-davi:DCOMP-UFS/2025-2-lab-t2-projeto-lab-site-DaviZzZS2.git"
+echo "  Lab 3: git@github-pedro:DCOMP-UFS/2025-2-lab-t2-projeto-lab-site-Pedro-rdn.git"
+echo "  Lab 4: git@github-wendell:DCOMP-UFS/2025-2-lab-t2-projeto-lab-site-WendellYan-dev.git"
 echo "Por favor, forneça as URLs dos repositórios (deixe em branco para usar as URLs padrão):"
 echo ""
 
 # Laboratório 1
 echo -e "${BLUE}Laboratório 1 (Camilo Feitosa):${NC}"
 read -p "URL do repositório [pressione Enter para usar padrão]: " LAB1_URL
-LAB1_URL=${LAB1_URL:-"git@github.com:DCOMP-UFS/2025-2-lab-t2-projeto-lab-site-CamiloFeitosa.git"}
+LAB1_URL=${LAB1_URL:-"git@github-camilo:DCOMP-UFS/2025-2-lab-t2-projeto-lab-site-CamiloFeitosa.git"}
     
 if [ ! -z "$LAB1_URL" ]; then
     echo -e "${YELLOW}Removendo pasta existente...${NC}"
@@ -52,7 +52,7 @@ echo ""
 # Laboratório 2
 echo -e "${BLUE}Laboratório 2 (Davi ZzZS2):${NC}"
 read -p "URL do repositório [pressione Enter para usar padrão]: " LAB2_URL
-LAB2_URL=${LAB2_URL:-"git@github.com:DCOMP-UFS/2025-2-lab-t2-projeto-lab-site-DaviZzZS2.git"}
+LAB2_URL=${LAB2_URL:-"git@github-davi:DCOMP-UFS/2025-2-lab-t2-projeto-lab-site-DaviZzZS2.git"}
 
 if [ ! -z "$LAB2_URL" ]; then
     echo -e "${YELLOW}Removendo pasta existente...${NC}"
@@ -76,7 +76,7 @@ echo ""
 # Laboratório 3
 echo -e "${BLUE}Laboratório 3 (Pedro rdn):${NC}"
 read -p "URL do repositório [pressione Enter para usar padrão]: " LAB3_URL
-LAB3_URL=${LAB3_URL:-"git@github.com:DCOMP-UFS/2025-2-lab-t2-projeto-lab-site-Pedro-rdn.git"}
+LAB3_URL=${LAB3_URL:-"git@github-pedro:DCOMP-UFS/2025-2-lab-t2-projeto-lab-site-Pedro-rdn.git"}
 
 if [ ! -z "$LAB3_URL" ]; then
     echo -e "${YELLOW}Removendo pasta existente...${NC}"
@@ -100,7 +100,7 @@ echo ""
 # Laboratório 4
 echo -e "${BLUE}Laboratório 4 (Wendell Yan):${NC}"
 read -p "URL do repositório [pressione Enter para usar padrão]: " LAB4_URL
-LAB4_URL=${LAB4_URL:-"git@github.com:DCOMP-UFS/2025-2-lab-t2-projeto-lab-site-WendellYan-dev.git"}
+LAB4_URL=${LAB4_URL:-"git@github-wendell:DCOMP-UFS/2025-2-lab-t2-projeto-lab-site-WendellYan-dev.git"}
 
 if [ ! -z "$LAB4_URL" ]; then
     echo -e "${YELLOW}Removendo pasta existente...${NC}"

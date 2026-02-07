@@ -47,7 +47,7 @@ Se os repositórios forem privados, você precisa:
    cat ~/.ssh/id_ed25519.pub
 
    # Usar URLs SSH em vez de HTTPS
-   git submodule add git@github.com:DCOMP-UFS/2025-2-lab-t2-projeto-lab-site-Pedro-rdn.git laboratorios/laboratorio2
+   git submodule add git@github-pedro:DCOMP-UFS/2025-2-lab-t2-projeto-lab-site-Pedro-rdn.git laboratorios/laboratorio2
    ```
 
 2. **Personal Access Token:**
