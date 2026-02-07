@@ -21,9 +21,9 @@ echo -e "${YELLOW}Este script irá configurar os repositórios dos laboratórios
 echo ""
 echo "URLs dos repositórios conhecidos:"
 echo "  Lab 1: git@github.com:DCOMP-UFS/2025-2-lab-t2-projeto-lab-site-CamiloFeitosa.git"
-echo "  Lab Teste 2: https://github.com/Felipespider/World-of-SEAL-HTML-CSS-.git"
-echo ""
-echo ""
+echo "  Lab 2: git@github.com:DCOMP-UFS/2025-2-lab-t2-projeto-lab-site-DaviZzZS2.git"
+echo "  Lab 3: git@github.com:DCOMP-UFS/2025-2-lab-t2-projeto-lab-site-Pedro-rdn.git"
+echo "  Lab 4: git@github.com:DCOMP-UFS/2025-2-lab-t2-projeto-lab-site-WendellYan-dev.git"
 echo "Por favor, forneça as URLs dos repositórios (deixe em branco para usar as URLs padrão):"
 echo ""
 
@@ -50,9 +50,9 @@ fi
 echo ""
 
 # Laboratório 2
-echo -e "${BLUE}Laboratório 2 (Teste Felipe):${NC}"
+echo -e "${BLUE}Laboratório 2 (Davi ZzZS2):${NC}"
 read -p "URL do repositório [pressione Enter para usar padrão]: " LAB2_URL
-LAB2_URL=${LAB2_URL:-"https://github.com/Felipespider/World-of-SEAL-HTML-CSS-.git"}
+LAB2_URL=${LAB2_URL:-"git@github.com:DCOMP-UFS/2025-2-lab-t2-projeto-lab-site-DaviZzZS2.git"}
 
 if [ ! -z "$LAB2_URL" ]; then
     echo -e "${YELLOW}Removendo pasta existente...${NC}"
@@ -68,6 +68,54 @@ if [ ! -z "$LAB2_URL" ]; then
         echo -e "${RED}❌ Erro ao adicionar Lab 2. Verifique a URL e permissões.${NC}"
         echo -e "${YELLOW}Criando placeholder...${NC}"
         mkdir -p laboratorios/laboratorio2
+    fi
+fi
+
+echo ""
+
+# Laboratório 3
+echo -e "${BLUE}Laboratório 3 (Pedro rdn):${NC}"
+read -p "URL do repositório [pressione Enter para usar padrão]: " LAB3_URL
+LAB3_URL=${LAB3_URL:-"git@github.com:DCOMP-UFS/2025-2-lab-t2-projeto-lab-site-Pedro-rdn.git"}
+
+if [ ! -z "$LAB3_URL" ]; then
+    echo -e "${YELLOW}Removendo pasta existente...${NC}"
+    git submodule deinit -f laboratorios/laboratorio3 2>/dev/null
+    git rm --cached -rf laboratorios/laboratorio3 2>/dev/null
+    rm -rf laboratorios/laboratorio3
+    rm -rf .git/modules/laboratorios/laboratorio3
+    echo -e "${YELLOW}Adicionando submódulo...${NC}"
+    git submodule add "$LAB3_URL" laboratorios/laboratorio3
+    if [ $? -eq 0 ]; then
+        echo -e "${GREEN}✅ Lab 3 configurado!${NC}"
+    else
+        echo -e "${RED}❌ Erro ao adicionar Lab 3. Verifique a URL e permissões.${NC}"
+        echo -e "${YELLOW}Criando placeholder...${NC}"
+        mkdir -p laboratorios/laboratorio3
+    fi
+fi
+
+echo ""
+
+# Laboratório 4
+echo -e "${BLUE}Laboratório 4 (Wendell Yan):${NC}"
+read -p "URL do repositório [pressione Enter para usar padrão]: " LAB4_URL
+LAB4_URL=${LAB4_URL:-"git@github.com:DCOMP-UFS/2025-2-lab-t2-projeto-lab-site-WendellYan-dev.git"}
+
+if [ ! -z "$LAB4_URL" ]; then
+    echo -e "${YELLOW}Removendo pasta existente...${NC}"
+    git submodule deinit -f laboratorios/laboratorio4 2>/dev/null
+    git rm --cached -rf laboratorios/laboratorio4 2>/dev/null
+    rm -rf laboratorios/laboratorio4
+    rm -rf .git/modules/laboratorios/laboratorio4
+    echo -e "${YELLOW}Adicionando submódulo...${NC}"
+    git submodule add "$LAB4_URL" laboratorios/laboratorio4
+    if [ $? -eq 0 ]; then
+        echo -e "${GREEN}✅ Lab 4 configurado!${NC}"
+    else
+        echo -e "${RED}❌ Erro ao adicionar Lab 4. Verifique a URL e permissões.${NC}"
+        echo -e "${YELLOW}Criando placeholder...${NC}"
+        mkdir -p laboratorios/laboratorio4
     fi
 fi
 

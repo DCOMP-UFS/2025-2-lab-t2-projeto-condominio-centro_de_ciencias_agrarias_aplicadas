@@ -15,7 +15,7 @@ services:
     environment:
       - LAB_NAME=Laboratório 1
 
-  # Site do Laboratório 2 - Felipe
+  # Site do Laboratório 2 - Davi ZzZS2
   laboratorio2:
     build:
       context: ./laboratorios
@@ -28,6 +28,34 @@ services:
       - ./dados-centro:/dados-centro:ro
     environment:
       - LAB_NAME=Laboratório 2
+
+  # Site do Laboratório 3 - Pedro rdn
+  laboratorio3:
+    build:
+      context: ./laboratorios
+      dockerfile: Dockerfile.lab3
+    container_name: lab3-site
+    networks:
+      - centro-network
+    restart: unless-stopped
+    volumes:
+      - ./dados-centro:/dados-centro:ro
+    environment:
+      - LAB_NAME=Laboratório 3
+
+  # Site do Laboratório 4 - WendellYan-dev
+  laboratorio4:
+    build:
+      context: ./laboratorios
+      dockerfile: Dockerfile.lab4
+    container_name: lab4-site
+    networks:
+      - centro-network
+    restart: unless-stopped
+    volumes:
+      - ./dados-centro:/dados-centro:ro
+    environment:
+      - LAB_NAME=Laboratório 4
 
   # Proxy reverso Nginx (opcional - para centralizar acesso)
   nginx-proxy:
