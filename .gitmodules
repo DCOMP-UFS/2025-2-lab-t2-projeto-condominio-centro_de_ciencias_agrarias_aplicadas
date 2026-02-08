@@ -1,6 +1,0 @@
-[submodule "laboratorios/laboratorio1"]
-	path = laboratorios/laboratorio1
-	url = git@github.com:DCOMP-UFS/2025-2-lab-t2-projeto-lab-site-CamiloFeitosa.git
-[submodule "laboratorios/laboratorio2"]
-	path = laboratorios/laboratorio2
-	url = https://github.com/Felipespider/World-of-SEAL-HTML-CSS-.git

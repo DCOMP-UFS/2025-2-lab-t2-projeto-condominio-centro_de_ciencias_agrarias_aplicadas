@@ -10,15 +10,21 @@
 
 ### ⚠️ Laboratório 2 - Pedro
 
-- **URL fornecida:** https://github.com/DCOMP-UFS/2025-2-lab-t2-projeto-lab-site-Pedro-rdn
+- **URL fornecida:** https://github.com/DCOMP-UFS/2025-2-lab-t2-projeto-lab-site-Pedro-rdn.git
 - **Status:** Repositório não encontrado ou não acessível
 - **Ação necessária:** Verifique a URL correta ou permissões de acesso
 
 ### ⚠️ Laboratório 3 - Davi
 
-- **URL fornecida:** https://github.com/DCOMP-UFS/2025-2-lab-t2-projeto-lab-site-DaviZzZS2
+- **URL fornecida:** https://github.com/DCOMP-UFS/2025-2-lab-t2-projeto-lab-site-DaviZzZS2.git
 - **Status:** Repositório não encontrado ou não acessível
 - **Ação necessária:** Verifique a URL correta ou permissões de acesso
+
+### 🔜 Laboratório 4 - William
+
+- **URL:** A ser fornecida
+- **Status:** Aguardando criação/configuração
+- **Ação necessária:** Criar o repositório e informar a URL
 
 ## Como Corrigir os Repositórios com Erro
 
@@ -216,7 +222,7 @@ ls -la laboratorios/laboratorio1/Dockerfile
 
 ## Próximos Passos
 
-1. ⚠️ **Corrigir URLs dos Labs 2 e 3** - Verifique as URLs corretas com os responsáveis
+1. ⚠️ **Corrigir URLs dos Labs 2, 3 e 4** - Verifique as URLs corretas com os responsáveis
 2. ✅ **Testar o deploy** - Execute `./scripts/deploy.sh`
 3. 🔄 **Configurar automação** - Configure cron job ou GitHub Actions para atualização automática
 4. 🔒 **Configurar HTTPS** - Para produção, configure certificados SSL

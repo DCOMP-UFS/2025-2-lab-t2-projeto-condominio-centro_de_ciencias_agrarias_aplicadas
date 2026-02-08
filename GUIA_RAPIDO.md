@@ -5,9 +5,9 @@
 ### Repositórios Git Submodules
 
 - ✅ **Lab 1 (Camilo):** Configurado e funcionando
-- ⚠️ **Lab 2 (Pedro):** URL incorreta - repositório não encontrado
-- ⚠️ **Lab 3 (Davi):** URL incorreta - repositório não encontrado
-- 🔜 **Lab 4:** A ser adicionado
+- ✅ **Lab 2 (Pedro):** Configurado e funcionando
+- ✅ **Lab 3 (Davi):** Configurado e funcionando
+- ✅ **Lab 4 (William):** Configurado e funcionando
 
 ## 🎯 Comandos Essenciais
 
@@ -87,6 +87,7 @@ Após deploy:
 - Lab 1: http://localhost:8081 ou http://localhost/lab1
 - Lab 2: http://localhost:8082 ou http://localhost/lab2
 - Lab 3: http://localhost:8083 ou http://localhost/lab3
+- Lab 4: http://localhost:8084 ou http://localhost/lab4
 
 ## 📁 Arquivos Importantes
 
@@ -167,7 +168,7 @@ lsof -i :80
 
 ## 📞 Próximos Passos
 
-1. ⚠️ **Urgente:** Corrigir URLs dos Labs 2 e 3
+1. ✅ Todos os labs estão funcionando
 2. ✅ Testar o sistema com `./scripts/deploy.sh`
 3. 🔄 Quando labs forem atualizados, usar `./scripts/atualizar.sh`
-4. 🔜 Adicionar Lab 4 quando disponível
+4. 🔒 Configurar HTTPS para produção
