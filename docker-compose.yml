@@ -67,6 +67,7 @@ services:
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf:ro
       - ./dados-centro:/usr/share/nginx/html/dados:ro
+      - ./index.html:/usr/share/nginx/html/index.html:ro
       - /etc/letsencrypt:/etc/letsencrypt:ro # 🔐 CERTIFICADO
     networks:
       - centro-network
