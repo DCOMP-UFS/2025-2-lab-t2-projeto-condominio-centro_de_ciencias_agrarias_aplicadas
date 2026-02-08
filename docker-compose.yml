@@ -74,6 +74,8 @@ services:
     depends_on:
       - laboratorio1
       - laboratorio2
+      - laboratorio3
+      - laboratorio4
 
 networks:
   centro-network:
