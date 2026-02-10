@@ -42,6 +42,23 @@ Após testes e validação, a infraestrutura será disponibilizada para uso regu
 
 Os quatro membros do projeto assumem integralmente as responsabilidades e atribuições referentes à proposta, exercendo funções de coordenação, administração, operação técnica e prestação de contas, conforme previsto no edital. A atuação conjunta assegura o cumprimento das obrigações técnicas, administrativas e financeiras, bem como os princípios de transparência, rastreabilidade e prestação de contas.
 
+
+## Critérios de Julgamento do Edital
+
+### I - Mérito técnico-científico
+
+Os laboratórios multiusuários do Centro de Ciências Agrárias Aplicadas contam com infraestrutura computacional moderna, servidores, sistemas de armazenamento, rede de alta disponibilidade e ambientes virtuais integrados. Todos os recursos são acessíveis via web, hospedados em ambiente AWS, garantindo disponibilidade, escalabilidade e acesso remoto para toda a comunidade acadêmica.
+
+Os sites de cada laboratório, bem como o portal principal do condomínio, estão disponíveis para avaliação e validação conforme exigido pelo edital:
+
+- **Página principal do condomínio:** [http://3.219.150.253/](http://3.219.150.253/)
+- **Laboratório 1:** [http://3.219.150.253/lab1/](http://3.219.150.253/lab1/)
+- **Laboratório 2:** [http://3.219.150.253/lab2/](http://3.219.150.253/lab2/)
+- **Laboratório 3:** [http://3.219.150.253/lab3/](http://3.219.150.253/lab3/)
+- **Laboratório 4:** [http://3.219.150.253/lab4/](http://3.219.150.253/lab4/)
+
+O acesso de cada aluno à turma do AWS será utilizado para validação e avaliação dos sites, conforme previsto no edital.
+
 ## Laboratórios Atendidos
 
 - Laboratório 1
